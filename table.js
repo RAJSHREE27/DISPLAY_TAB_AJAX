@@ -33,3 +33,42 @@ function renderHTML(data){
 
 	student.insertAdjacentHTML('beforeend' , htmltab);        //before end tag
 }
+
+function search_val(){
+	var ip ,convert, tabval,row , col, i, total=11;
+	ip = document.getElementById("input");						//linking id of input tag from index.html to var ip of table.js /* value to be entered by user */
+	convert= ip.value.toUpperCase();								//converting the entered value to uppercase form
+	tabval = document.getElementById("tab");					//linking id of table tag to var tabval
+	row = tabval.getElementsByTagName("tr");					//linking values of each row from table
+
+	for( i=0; i< row.length ; i++)
+	{
+			col= row[i].getElementsByTagName("td")[0];								//to check 0th column of 'i'th row
+			if (col) 															// if col exists
+			{		
+					if (col.innerHTML.toUpperCase().indexOf(convert) > -1) 			//comparing the entered value with that of row value if it is true it starts from 0
+					{		
+							row[i].style.display= "";
+					}
+					else
+					{
+						col=row[i].getElementsByTagName("td")[1];
+						if (col)
+						 {
+							if(col.innerHTML.toUpperCase().indexOf(convert) > -1)
+							{
+									row[i].style.display="";
+							}
+							else
+							{
+								row[i].style.display="none";
+								total--;
+							}
+						}
+					}
+			}
+	}
+
+
+	document.getElementById("val2").innerHTML = "NUMBER OF ELEMENTS - " + total;
+}

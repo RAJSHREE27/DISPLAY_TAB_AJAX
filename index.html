@@ -30,7 +30,7 @@
 
 
 		}
-		@media only screen and (max-width: 768px) {
+		@media only screen and (max-width: 780px) {
     /* For mobile phones: */
 		    .mos {
 		        width: 4px;
@@ -48,6 +48,13 @@
 		body{
 			background-color: #bfff80;
 		}
+		.in{
+			padding: 13px;
+			width: 40%;
+			margin-left: 30%;
+			margin-bottom: 30%;
+			margin-right: 30%;
+		}
 
 	</style>
 
@@ -64,6 +71,8 @@
 			
 		</table>
 		<p id ="val" class="val"></p> 
+		<input type="text" id="input" class="in" onkeyup="search_val()" placeholder="Enter element to be searched ...">
+		<p id ="val2" class="val"></p> 
 		<script type="text/javascript" src="table.js"></script>
 	</body>
 </html>
