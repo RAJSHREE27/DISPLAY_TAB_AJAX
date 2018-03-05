@@ -68,6 +68,7 @@ function search_val(){
 					}
 			}
 			document.getElementById("val2").innerHTML = "NUMBER OF ELEMENTS - " + total;
+			document.getElementById("val").innerHTML= "";
 }
 	}
 
